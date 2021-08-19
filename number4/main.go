@@ -86,6 +86,6 @@ func main() {
 	//serve static files
 	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./assets/")))
 
-	log.Fatal(http.ListenAndServe(":8080", r))
+	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), r))
 
 }
